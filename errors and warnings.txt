@@ -1,0 +1,19 @@
+PS D:\Web Programming\react\AdooptionApp> npm i -D vite@3.1.4 @vitejs/plugin-react@2.1.0
+npm WARN deprecated sourcemap-codec@1.4.8: Please use @jridgewell/sourcemap-codec instead
+
+added 74 packages, and audited 188 packages in 25s
+
+36 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+----------------------------------------------------------------------------------
+PS D:\Web Programming\react\AdooptionApp> npm i react@18.2.0 react-dom@18.2.0
+
+added 4 packages, and audited 192 packages in 7s
+
+36 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+PS D:\Web Programming\react\AdooptionApp> 
