@@ -1,4 +1,4 @@
-import React from "react";
+import React, { StrictMode } from "react";
 // import { createRoot } from "react-dom";
 import ReactDOM from "react-dom/client";
 // import Pet from "./Pet.jsx";
@@ -25,14 +25,15 @@ const App = () => {
   // ]);
   // here we are going to replace it in form of jsx
   return (
-    <div>
-      <h1>Adopt Me!</h1>
-      {/* <Pet name="Shiro" animal="Dog" breed="Samoyed" />
+    <StrictMode> {/*here strictmode is for preventing the unfamiliar behaviors which may occure due to upcoming updates of react */}
+      <div>
+        <h1>Adopt Me!</h1>
+        {/* <Pet name="Shiro" animal="Dog" breed="Samoyed" />
       <Pet name="Maya" animal="Cat" breed="Ragdoll" />
       <Pet name="Magru" animal="Crocodile" breed="Alligator" /> */}
-
-      <SearchParams />
-    </div>
+        <SearchParams />
+      </div>
+    </StrictMode>
   );
 };
 

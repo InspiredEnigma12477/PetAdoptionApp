@@ -1,17 +1,29 @@
 import { useEffect, useState } from "react";
-import Pet from "./Pet";
+// import Pet from "./Pet"; here we dont need this anymore because we have imported the pets from the Results
+import Results from "./Results";
+import useBreedList from "./useBreedList";
 const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
 
 const SearchParams = () => {
-  const [pets, setPets] = useState([]);
   const [location, setLocation] = useState("");
   const [animal, setAnimal] = useState("");
   const [breed, setBreed] = useState("");
-  const breeds = [];
+  // const breeds = [];
+  const [pets, setPets] = useState([]); // its an empty array to retrieve set of data from the api
+  const [breeds] = useBreedList(animal);
+  //useEffect is to load data initially
+  useEffect(
+    () => {
+      requestPets();
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [
+      /*animal, location*/
+    ]
+  );
 
-  useEffect(() => {
-    requestPets();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  // here we are telling the API that everytime we change the animal and location the list of API should be updated
+  // after doing it like that we should move the requestPets() inside the use effect that what the Hooks wants us to do
 
   async function requestPets() {
     // eslint-disable-next-line no-undef
@@ -81,17 +93,17 @@ const SearchParams = () => {
             ))}
           </select>
         </label>
-
         <button>Submit</button>
       </form>
-      {pets.map((pet) => (
+      {/* {pets.map((pet) => (
         <Pet
           name={pet.name}
           animal={pet.animal}
           breed={pet.breed}
-          key={pet.id}
+          key={pet.id} // here giving id just creates a key which acts a unique identifier per object in your array
         />
-      ))}
+      ))} */}
+      <Results pets={pets} />
     </div>
   );
 };
