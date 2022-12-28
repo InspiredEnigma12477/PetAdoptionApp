@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 // import Pet from "./Pet"; here we dont need this anymore because we have imported the pets from the Results
-=======
-import { useEffect, useState } from "react";
->>>>>>> f7c9d42d6ad3a699d4aaced96c85a54531d8ee23
 import Results from "./Results";
 import useBreedList from "./useBreedList";
 import fetchSearch from "./fetchSearch";
@@ -12,31 +8,23 @@ import fetchSearch from "./fetchSearch";
 const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
 
 const SearchParams = () => {
-
-  const [requestParams,setRequestParams] = useState({
-    location:"",
-    animal:"",
-    breed:"",
+  const [requestParams, setRequestParams] = useState({
+    location: "",
+    animal: "",
+    breed: "",
   });
   // const [location, setLocation] = useState("");
   const [animal, setAnimal] = useState("");
-<<<<<<< HEAD
   // const [breed, setBreed] = useState("");
   // const breeds = [];
   // const [pets, setPets] = useState([]); // its an empty array to retrieve set of data from the api
-=======
-  const [breed, setBreed] = useState("");
-  const [pets, setPets] = useState([]); // its an empty array to retrieve set of data from the api
->>>>>>> f7c9d42d6ad3a699d4aaced96c85a54531d8ee23
   const [breeds] = useBreedList(animal);
- 
-  const results = useQuery(["search",requestParams],fetchSearch);
-  const pets = results?.data?.pets ??[];
- 
+
+  const results = useQuery(["search", requestParams], fetchSearch);
+  const pets = results?.data?.pets ?? [];
 
   // ***OLD CODE***
   //useEffect is to load data initially
-<<<<<<< HEAD
   // useEffect(
   //   () => {
   //     requestPets();
@@ -49,12 +37,6 @@ const SearchParams = () => {
 
   // // here we are telling the API that everytime we change the animal and location the list of API should be updated
   // // after doing it like that we should move the requestPets() inside the use effect that what the Hooks wants us to do
-=======
-  useEffect(
-    () => {
-      requestPets();
-    },// eslint-disable-next-line react-hooks/exhaustive-deps[]);
->>>>>>> f7c9d42d6ad3a699d4aaced96c85a54531d8ee23
 
   // async function requestPets() {
   //   // eslint-disable-next-line no-undef
@@ -76,9 +58,9 @@ const SearchParams = () => {
           // eslint-disable-next-line no-undef
           const formData = new FormData(e.target);
           const obj = {
-            animal:formData.get("animal") ?? "",
-            breed:formData.get("breed") ?? "",
-            location:formData.get("location") ?? "",
+            animal: formData.get("animal") ?? "",
+            breed: formData.get("breed") ?? "",
+            location: formData.get("location") ?? "",
           };
           setRequestParams(obj);
         }}
@@ -120,7 +102,7 @@ const SearchParams = () => {
         <label htmlFor="breed">
           Breed
           <select
-            disabled={breeds.length===0}
+            disabled={breeds.length === 0}
             id="breed"
             name="breed"
             // value={breed}
