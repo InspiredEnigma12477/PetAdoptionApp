@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 // import React, { StrictMode } from "react";
 // import { createRoot } from "react-dom";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 // import Pet from "./Pet.jsx";
+=======
+import React, { StrictMode } from "react";
+import ReactDOM from "react-dom/client";
+>>>>>>> f7c9d42d6ad3a699d4aaced96c85a54531d8ee23
 import SearchParams from "./SearchParams.jsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Details from "./Details.jsx";
@@ -21,6 +26,7 @@ const queryClient = new QueryClient({
 });
 
 const App = () => {
+<<<<<<< HEAD
   // return React.createElement("div", {}, [
   //   React.createElement("h1", {}, "Adopt Me!"),
   //   React.createElement(Pet, {
@@ -66,9 +72,17 @@ const App = () => {
         </Routes>
       </QueryClientProvider>
     </BrowserRouter>
+=======
+  return (
+    <StrictMode> {/*here strictmode is for preventing the unfamiliar behaviors which may occure due to upcoming updates of react */}
+      <div>
+        <h1>Adopt Me!</h1>
+        <SearchParams />
+      </div>
+    </StrictMode>
+>>>>>>> f7c9d42d6ad3a699d4aaced96c85a54531d8ee23
   );
 };
-
 // eslint-disable-next-line no-undef
 const container = document.getElementById("root");
 const root = ReactDOM.createRoot(container);
