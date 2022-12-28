@@ -1,4 +1,3 @@
-//this is for the small images which will appear right next to the name of thee pet
 import { Link } from "react-router-dom";
 import React from "react";
 
@@ -10,9 +9,6 @@ const Pet = (props) => {
   if (images.length) {
     hero = images[0];
   }
-
-  // here we have used Link instead of a href="" in anchor tag
-  // what it does is instead of refreshing the whole page it will just refresh the data
 
   return (
     <Link to={`/details/${id}`} className="pet">
