@@ -191,7 +191,7 @@
   #modal button,
   #modal a,
   .details button {
-    background-color: #ad343e;
+    background-color: #af5c63;
     padding: 5px 25px;
     color: white;
     font-size: 18px;
@@ -213,7 +213,7 @@
   }
   
   .search-params button:active {
-    background-color: #5f1d22;
+    background-color: #E35335;
   }
   
   .search-params button:focus {
