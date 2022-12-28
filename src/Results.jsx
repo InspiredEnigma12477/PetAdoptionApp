@@ -8,7 +8,6 @@ const Results = ({ pets }) => {
       ) : (
         pets.map((pet) => (
           <Pet
-            //{...pet} // here this bracket means that spread the components of pets
             animal={pet.animal}
             key={pet.id}
             name={pet.name}
