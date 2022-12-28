@@ -1,5 +1,3 @@
-//async functions always returns promises
-
 const fetchPet = async ({ queryKey }) => {
   const id = queryKey[1];
 
@@ -12,9 +10,5 @@ const fetchPet = async ({ queryKey }) => {
 
   return apiRes.json();
 };
-
-//this can be a good example for returning a method if you give correct querykey
-//its gonna give you the correct response or result of the API
-
 
 export default fetchPet;
